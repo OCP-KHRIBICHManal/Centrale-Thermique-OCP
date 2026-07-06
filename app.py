@@ -455,15 +455,14 @@ st.markdown("""
         margin-bottom: 1rem;
         font-style: italic;
     }
-    /* ── Tabs ── */
-    [data-testid="stTabs"] [data-baseweb="tab-list"] {
-        background: #e8f5e9;
-        border-radius: 10px 10px 0 0;
-        padding: 0.3rem 0.3rem 0;
-        gap: 0.2rem;
-        border-bottom: 2px solid #81c784;
+   /* ── Tabs ── */
+    div[data-testid="stTabs"] > div:first-child {
+        background: #e8f5e9 !important;
+        border-radius: 10px 10px 0 0 !important;
+        border-bottom: 2px solid #81c784 !important;
+        padding: 0.3rem 0.3rem 0 !important;
     }
-    [data-testid="stTabs"] [data-baseweb="tab"] {
+    button[data-baseweb="tab"] {
         font-family: "Times New Roman", Times, serif !important;
         font-weight: 900 !important;
         font-size: 1rem !important;
@@ -471,18 +470,17 @@ st.markdown("""
         background: transparent !important;
         border-radius: 8px 8px 0 0 !important;
         padding: 0.55rem 1.3rem !important;
-        border: none !important;
-        letter-spacing: 0.01em;
     }
-    [data-testid="stTabs"] [data-baseweb="tab"] p {
-        font-family: "Times New Roman", Times, serif !important;
-        font-weight: 900 !important;
-    }
-    [data-testid="stTabs"] [aria-selected="true"] {
+    button[data-baseweb="tab"][aria-selected="true"] {
         background: white !important;
         color: #145214 !important;
         border-bottom: 3px solid #1a7a1a !important;
         box-shadow: 0 -2px 8px rgba(0,100,0,0.08) !important;
+    }
+    button[data-baseweb="tab"] p {
+        font-family: "Times New Roman", Times, serif !important;
+        font-weight: 900 !important;
+        color: inherit !important;
     }
             /* ── Fix tabs pour Streamlit Cloud ── */
     .stTabs [data-baseweb="tab-list"] {
